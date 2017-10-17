@@ -1,6 +1,6 @@
 #!/bin/bash
 SERVICE_WAR=filmoteka.war
-TOMCAT7_HOME=/home/pi/apache-tomcat-7.0.81
+TOMCAT7_HOME=~/apache-tomcat-7.0.81
 MYSQL_ROOT_PASS=root
 
 #Check Java
@@ -15,7 +15,7 @@ echo 'Java OK.' >&2
 echo 'Check Tomcat7...' >&2
 if [[ ! -e $TOMCAT7_HOME ]]; then
   echo 'Install Tomcat7.' >&2
-  wget http://ftp.ps.pl/pub/apache/tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz
+  wget https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz
   tar xzf apache-tomcat-7.0.81.tar.gz -C ~/
   rm -f apache-tomcat-7.0.81.tar.gz
 fi
