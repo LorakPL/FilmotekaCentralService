@@ -36,6 +36,11 @@ if ! [ -x "$(ps aux | grep tomcat)" ]; then
   bash $TOMCAT7_HOME/bin/catalina.sh stop
 fi
 
+echo "Set up data..." >&2
+
+echo "Create database." >&2
+sudo mysql -u root -p$MYSQL_ROOT_PASS < database.sql
+
 echo "Setting up the site" >&2
 cp $SERVICE_WAR $TOMCAT7_HOME/webapps/$SERVICE_WAR
 
